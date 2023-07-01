@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brasil</title>
+    <script src="brasil3.js"></script>
+    <link rel="stylesheet" href="brasil3.css">
+</head>
+
+<body>
+    <div id="container">
+        <div id="divEst">
+            <p class="pNormal">
+                Estado: <select name="estado" id="estado"
+                    onchange="pegaMuni(this.value, 'municipios', 'munic')"></select>
+            </p>
+            <div id="estInfo">
+                <details>
+                    <summary>Informações do Estado</summary>
+                    <table>
+                        <tr>
+                            <td rowspan="2">
+                                <div>
+                                    <table class="tabPop" id="tabInfoB"></table>
+                                </div>
+                            </td>
+                            <td>
+                                <div>
+                                    <table class="tabPop" id="tabPopEst"></table>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div>
+                                    <table id="tabPibE" class="tabPop"></table>
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+                </details>
+            </div>
+        </div>
+        <div id="divMuni">
+            <p class="pNormal">
+                Município: <input id="munic" type="text" placeholder="Escolha o Município" list="municipios"
+                    onchange="pegaDist(this, 'distritos')" />
+                <datalist id="municipios"></datalist>
+                <span id="idmuni"></span>
+            </p>
+            <details>
+                <summary>Informações do Município</summary>
+                <table>
+                    <tr>
+                        <td rowspan="2">
+                            <div>
+
+                                <table id="tabInfoBM" class="tabPop"></table>
+                            </div>
+                        </td>
+                        <td>
+                            <div>
+                                <table id="tabPopMun" class="tabPop"></table>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div>
+                                <table id="tabPibM" class="tabPop"></table>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+                <details>
+                    <summary>Distritos e nomes mais comuns</summary>
+
+                    <div id="info1">
+                        <div id="divDistr">
+                            <p id="pDistr">DISTRITOS:</p>
+                            <p class="pNormal2"><select multiple id="distritos"></select></p>
+                        </div>
+                        <div id="nomes">
+                            <table id="muniNomes" class="tabPop"></table>
+                        </div>
+                    </div>
+                </details>
+            </details>
+            <details>
+                <summary>Previsão do tempo</summary>
+                <table id="prev" class="tabPop"></table>
+            </details>
+        </div>
+        <div id="map1"></div>
+        <div></div>
+    </div>
+</body>
+
+</html>
